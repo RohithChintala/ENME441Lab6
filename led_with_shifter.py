@@ -7,7 +7,7 @@ from led_display import LEDdisplay
 # to define the GPIO pins, since LEDdisplay is
 # pin-agnostic).
 
-dataPin, latchPin, clockPin = 23, 24, 25
+dataPin, latchPin, clockPin = 13, 19, 26
 
 # Pick a number sequence
 sequence = [8, 6, 7, 5, 3, 0, 9]
