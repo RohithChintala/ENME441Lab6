@@ -1,5 +1,6 @@
 import time
 from led_display import LED8x8
+import multiprocessing
 
 # Simple demonstration of the LEDdisplay class.
 # Note that we don't need RPi.GPIO here since all the I/O
