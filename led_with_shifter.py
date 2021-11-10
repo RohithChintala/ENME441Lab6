@@ -31,4 +31,4 @@ while True:
     p = multiprocessing.Process(name='myname',target=LED.display(n, a),args=(n, a))
     p.daemon = True
     p.start()
-    time.sleep(0.001)
+    time.sleep(0.0001)
