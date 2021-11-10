@@ -21,6 +21,8 @@ pattern = [
 LED= LED8x8(dataPin, latchPin, clockPin)
 ay = 0
 ax = 0
+g = 0b1
+mask = 0b11111111
 while True:
   x = random.randint(-1, 1)
   y = random.randint(-1, 1)
@@ -34,10 +36,12 @@ while True:
     ax = 7
   if ax > 7:
     ax = 0
-  g = 2**ax
-   
-  a = multiprocessing.Array('i',8)
-  a[ay] = bin(g)
+  f = g << (8-ax)
+  e = ~f & mask
+
+  a = multiprocessing.Array('i',8) #maybe instead of i have s
+  #a = multiprocessing.value('s')
+  a[ay] = e
   p = multiprocessing.Process(name='myname',target=LED.display(ay, a),args=(ay, a))
   p.daemon = True
   p.start()
