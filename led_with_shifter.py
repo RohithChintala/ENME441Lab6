@@ -28,7 +28,7 @@ while True:
   for n in range(8):
     a = multiprocessing.Array('i',8)
     a[n] = pattern[n]
-    p = multiprocessing.Process(name='myname',target=LED.display(n),args=(a))
+    p = multiprocessing.Process(name='myname',target=LED.display(),args=(n, a))
     p.daemon = True
     p.start()
     time.sleep(0.05)
