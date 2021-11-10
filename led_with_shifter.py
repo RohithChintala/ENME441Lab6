@@ -32,4 +32,4 @@ while True:
     p.daemon = True
     p.start()
     #LED.display(n)
-    time.sleep(0.001)
+    time.sleep(0.05)
