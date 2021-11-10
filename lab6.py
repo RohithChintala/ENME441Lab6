@@ -19,8 +19,8 @@ pattern = [
 
 #theLEDdisplay= LEDdisplay(dataPin, latchPin, clockPin)
 LED= LED8x8(dataPin, latchPin, clockPin)
-ay = 0
-ax = 0
+ay = 5
+ax = 5
 g = 0b1
 mask = 0b11111111
 
