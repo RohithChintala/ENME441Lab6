@@ -37,7 +37,7 @@ while True:
   g = 1
 ` g <<= ax 
   a = multiprocessing.Array('i',8)
-  a[ay] = g
+  a[ay] = bin(g)
   p = multiprocessing.Process(name='myname',target=LED.display(ay, a),args=(ay, a))
   p.daemon = True
   p.start()
