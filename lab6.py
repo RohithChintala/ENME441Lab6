@@ -31,11 +31,11 @@ while True:
     y = random.randint(-1, 1)
     ax += x
     ay += y
-    if ax => 0:
+    if ax >= 0:
       h = 1
     if ax <= 7:
       h = 1
-    if ay => 0:
+    if ay >= 0:
       h = 1
     if ay <= 7:
       h = 1
