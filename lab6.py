@@ -33,7 +33,7 @@ while True:
   while h == 0:
     if ax > 0:
       h = 1
-    if ax < 0:
+    if ax < 7:
       h = 1
     if ay > 0:
       h = 1
