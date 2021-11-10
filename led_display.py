@@ -24,4 +24,36 @@ class LEDdisplay():
     self.shifter = Shifter(data, latch, clock)
  
   def setNumber(self, num):  # display a given number
+    row = 5    # change this value to pick which row the pattern appears on
     self.shifter.shiftByte(LEDdisplay.numbers[num])
+    self.shifter.shiftByte(1 << (row-1))   # select the given row
+    self.shifter.ping(self.shifter.latchPin)
+
+
+class LED8x8():
+
+  pattern = [ 
+    0b00111100, 
+    0b01000010,
+    0b10100101,
+    0b10000001,
+    0b10100101,
+    0b10011001,
+    0b01000010,
+    0b00111100] 
+
+  def __init__(self, data, latch, clock):
+    self.shifter = Shifter(data, latch, clock)
+ 
+  def display(self, num):  # display a given number
+    row = 4    # change this value to pick which row the pattern appears on
+    self.shifter.shiftByte(LED8x8.pattern[num])
+    self.shifter.shiftByte(1 << (row-1))   # select the given row
+    self.shifter.ping(self.shifter.latchPin)
+'''
+  def setNumber(self, num):
+row = 4    # change this value to pick which row the pattern appears on
+self.shifter.shiftByte(~LEDdisplay.numbers[num])  # load the row values
+self.shifter.shiftByte(1 << (row-1))   # select the given row
+self.shifter.ping(self.shifter.latchPin)
+'''
