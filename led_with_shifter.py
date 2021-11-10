@@ -11,10 +11,19 @@ dataPin, latchPin, clockPin = 13, 19, 26
 
 # Pick a number sequence
 sequence = [8, 6, 7, 5, 3, 0, 9]
+pattern = [ 
+  0b00111100, 
+  0b01000010,
+  0b10100101,
+  0b10000001,
+  0b10100101,
+  0b10011001,
+  0b01000010,
+  0b00111100] 
 
-theLEDdisplay= LEDdisplay(dataPin, latchPin, clockPin)
-
+#theLEDdisplay= LEDdisplay(dataPin, latchPin, clockPin)
+LED= LED8x8(dataPin, latchPin, clockPin)
 while True:
-  for n in range(len(sequence)):
-    theLEDdisplay.setNumber(sequence[n])
-    time.sleep(0.4)
+  for n in range(8):
+    LED.display(8)
+    time.sleep(0.001)
