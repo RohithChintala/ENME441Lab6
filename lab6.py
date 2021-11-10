@@ -17,7 +17,6 @@ pattern = [
   0b00000010,
   0b00000001] 
 
-#theLEDdisplay= LEDdisplay(dataPin, latchPin, clockPin)
 LED= LED8x8(dataPin, latchPin, clockPin)
 ay = 5
 ax = 5
