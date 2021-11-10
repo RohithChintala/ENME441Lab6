@@ -23,19 +23,22 @@ ay = 0
 ax = 0
 g = 0b1
 mask = 0b11111111
+
 while True:
   x = random.randint(-1, 1)
   y = random.randint(-1, 1)
   ax += x
   ay += y
-  if ay < 0:
-    ay = 7
-  if ay > 7:
-    ay = 0
-  if ax < 0:
-    ax = 7
-  if ax > 7:
-    ax = 0
+  h = 0
+  while h == 0:
+    if ax > 0:
+      h = 1
+    if ax < 0:
+      h = 1
+    if ay > 0:
+      h = 1
+    if ay < 7:
+      h = 1
   f = g << (8-ax)
   e = ~f & mask
   a = multiprocessing.Array('i',8) #maybe instead of i have s
