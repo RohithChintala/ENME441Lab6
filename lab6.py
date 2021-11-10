@@ -25,12 +25,12 @@ g = 0b1
 mask = 0b11111111
 
 while True:
-  ax += x
-  ay += y
   h = 0
   while h == 0:
     x = random.randint(-1, 1)
     y = random.randint(-1, 1)
+    ax += x
+    ay += y
     if ax > 0:
       h = 1
     if ax < 7:
