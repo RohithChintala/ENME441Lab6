@@ -16,7 +16,7 @@ class LED8x8(multiprocessing.Process):
     self.shifter = Shifter(data, latch, clock)
     multiprocessing.Process.__init__(self)
   def display(self, num, a):
-    self.shifter.shiftByte(LED8x8.a[num])
+    self.shifter.shiftByte(a[num])
     self.shifter.shiftByte(1 << (num))
     #self.shifter.ping(self.shifter.latchPin)
 
