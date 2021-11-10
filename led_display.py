@@ -46,7 +46,7 @@ class LED8x8():
     self.shifter = Shifter(data, latch, clock)
  
   def display(self, num):  # display a given number
-    row = 4    # change this value to pick which row the pattern appears on
+    row = 1    # change this value to pick which row the pattern appears on
     self.shifter.shiftByte(LED8x8.pattern[num])
     self.shifter.shiftByte(1 << (row-1))   # select the given row
     self.shifter.ping(self.shifter.latchPin)
