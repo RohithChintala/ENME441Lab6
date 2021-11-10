@@ -32,13 +32,10 @@ while True:
     ax += x
     ay += y
     if ax >= 0:
-      h = 1
-    if ax <= 7:
-      h = 1
-    if ay >= 0:
-      h = 1
-    if ay <= 7:
-      h = 1
+      if ax <= 7:
+        if ay >= 0:
+          if ay <= 7:
+            h = 1
     else:
       h = 0
   f = g << abs(8-ax)
