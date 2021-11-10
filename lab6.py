@@ -38,11 +38,10 @@ while True:
     ax = 0
   f = g << (8-ax)
   e = ~f & mask
-
   a = multiprocessing.Array('i',8) #maybe instead of i have s
   #a = multiprocessing.value('s')
   a[ay] = e
   p = multiprocessing.Process(name='myname',target=LED.display(ay, a),args=(ay, a))
   p.daemon = True
   p.start()
-  time.sleep(0.5)
+  time.sleep(0.1)
