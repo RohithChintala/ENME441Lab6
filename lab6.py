@@ -34,8 +34,8 @@ while True:
     ax = 7
   if ax > 7:
     ax = 0
-  g = 1
-  g <<= ax 
+  g = 2**ax
+   
   a = multiprocessing.Array('i',8)
   a[ay] = bin(g)
   p = multiprocessing.Process(name='myname',target=LED.display(ay, a),args=(ay, a))

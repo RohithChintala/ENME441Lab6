@@ -1,7 +1,7 @@
 import random
 ay = 0
 ax = 0
-
+g = 0
 x = random.randint(-1, 1)
 y = random.randint(-1, 1)
 ax += x
@@ -14,6 +14,9 @@ if ax < 0:
   ax = 7
 if ax > 7:
   ax = 0
-g = 1
-g <<= ax
+#g <<= ax
+
+g = 2**ax
+print(ax)
+print(g)
 print(bin(g)) 
