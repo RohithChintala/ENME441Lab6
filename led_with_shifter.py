@@ -25,5 +25,10 @@ pattern = [
 LED= LED8x8(dataPin, latchPin, clockPin)
 while True:
   for n in range(8):
-    LED.display(n)
+    a = multiprocessing.Array('i',8)
+    a[n] = pattern[n]
+    p = LED.display(n)
+    p.daemon = True
+    p.start()
+    #LED.display(n)
     time.sleep(0.001)

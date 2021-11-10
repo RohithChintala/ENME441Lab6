@@ -1,9 +1,31 @@
-
-# LEDdisplay class
-
 import time
 from shifter import Shifter    # extend by composition
+import multiprocessing
 
+class LED8x8(multiprocessing.Process):
+
+  pattern = [ 
+    0b00111100, 
+    0b01000010,
+    0b10100101,
+    0b10000001,
+    0b10100101,
+    0b10011001,
+    0b01000010,
+    0b00111100] 
+
+  def __init__(self, data, latch, clock):
+    self.shifter = Shifter(data, latch, clock)
+    multiprocessing.Process.__init__(self)
+  def display(self, num):
+    self.shifter.shiftByte(LED8x8.pattern[num])
+    self.shifter.shiftByte(1 << (num))
+    self.shifter.ping(self.shifter.latchPin)
+
+
+
+
+'''
 class LEDdisplay():
 
   'Class for controlling a 7-segment LED display'
@@ -28,8 +50,8 @@ class LEDdisplay():
     self.shifter.shiftByte(LEDdisplay.numbers[num])
     self.shifter.shiftByte(1 << (row-1))   # select the given row
     self.shifter.ping(self.shifter.latchPin)
-
-
+'''
+'''
 class LED8x8():
 
   pattern = [ 
@@ -46,9 +68,11 @@ class LED8x8():
     self.shifter = Shifter(data, latch, clock)
  
   def display(self, num):  # display a given number
+    a = multiprocessing.Array('i',2)
     self.shifter.shiftByte(LED8x8.pattern[num])
     self.shifter.shiftByte(1 << (num))   # select the given row
     self.shifter.ping(self.shifter.latchPin)
+'''
 '''
   def setNumber(self, num):
 row = 4    # change this value to pick which row the pattern appears on
