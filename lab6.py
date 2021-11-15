@@ -39,7 +39,7 @@ while True:
       h = 0
       ax -= x
       ay -= y
-  f = g << abs(8-ax)
+  f = g << abs(7-ax)
   e = ~f & mask
   a = multiprocessing.Array('i',8) #maybe instead of i have s
   #a = multiprocessing.value('s')
