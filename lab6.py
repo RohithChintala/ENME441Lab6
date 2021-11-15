@@ -29,8 +29,7 @@ while True:
       ay -= y
   f = g << abs(7-ax)
   e = ~f & mask
-  a = multiprocessing.Array('i',8) #maybe instead of i have s
-  #a = multiprocessing.value('s')
+  a = multiprocessing.Array('i',8)
   a[ay] = e
   p = multiprocessing.Process(name='myname',target=LED.display(ay, a),args=(ay, a))
   p.daemon = True
