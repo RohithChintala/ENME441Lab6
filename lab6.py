@@ -1,9 +1,7 @@
 import time
-from led_display import LED8x8
+from LED8x8 import LED8x8
 import multiprocessing
 import random
-
-
 
 dataPin, latchPin, clockPin = 13, 19, 26
 
