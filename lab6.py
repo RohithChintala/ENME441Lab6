@@ -36,9 +36,9 @@ while True:
     #p = LED8x8Copy(dataPin,latchPin,clockPin, ay, a)
     LED= LED8x8Copy(dataPin, latchPin, clockPin, ay, a)
     #p = multiprocessing.Process(name='myname',target=LED.display(ay, a),args=(ay, a))
-    p.daemon = True
-    p.start()
-    time.sleep(0.1)
+    #p.daemon = True
+    #p.start()
+    #time.sleep(0.1)
   except Exception as e:   # catch everything, just in case
     print(e)               # delete once code is debugged
     LED.p.terminate()      # terminate the process
