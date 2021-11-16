@@ -32,7 +32,7 @@ while True:
   e = ~f & mask
   a = multiprocessing.Array('i',8)
   a[ay] = e
-  p = LED8x8Copy(dataPin,latchPin,clockPin, ay, a, "name")
+  p = LED8x8Copy(dataPin,latchPin,clockPin, ay, a)
   #p = multiprocessing.Process(name='myname',target=LED.display(ay, a),args=(ay, a))
   p.daemon = True
   p.start()
