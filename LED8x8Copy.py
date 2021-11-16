@@ -5,7 +5,7 @@ import multiprocessing
 class LED8x8Copy(multiprocessing.Process):
   def __init__(self, data, latch, clock, num, a):
     self.shifter = Shifter(data, latch, clock)
-    multiprocessing.Process.__init__(self.display)
+    multiprocessing.Process.__init__(target=self.display)
   def display(self, num, a):
     self.shifter.shiftByte(a[num])
     self.shifter.shiftByte(1 << (num))
